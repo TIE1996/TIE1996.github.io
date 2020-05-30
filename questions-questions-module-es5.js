@@ -316,7 +316,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "checkAnswer",
         value: function checkAnswer(index) {
-          if (this.thema.questions[index].answer.indexOf(this.solutions.solutions.get(this.topic).solution[index].toLowerCase()) > -1) {
+          if (this.thema.questions[index].answer.indexOf(this.solutions.solutions.get(this.topic).solution[index].toLowerCase().trim()) > -1) {
             this.rightAnswer(index);
           } else {
             this.wrongAnswer();
@@ -325,7 +325,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "checkNumberAnswer",
         value: function checkNumberAnswer(index) {
-          var userSolution = Number(this.solutions.solutions.get(this.topic).solution[index]);
+          var userSolution = Number(this.solutions.solutions.get(this.topic).solution[index].trim());
           var correctSolution = this.thema.questions[index].answer;
           var tolerance = this.thema.questions[index].tolerance;
 

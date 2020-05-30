@@ -193,7 +193,7 @@ let QuestionsPage = class QuestionsPage {
         });
     }
     checkAnswer(index) {
-        if (this.thema.questions[index].answer.indexOf(this.solutions.solutions.get(this.topic).solution[index].toLowerCase()) > -1) {
+        if (this.thema.questions[index].answer.indexOf(this.solutions.solutions.get(this.topic).solution[index].toLowerCase().trim()) > -1) {
             this.rightAnswer(index);
         }
         else {
@@ -201,7 +201,7 @@ let QuestionsPage = class QuestionsPage {
         }
     }
     checkNumberAnswer(index) {
-        let userSolution = Number(this.solutions.solutions.get(this.topic).solution[index]);
+        let userSolution = Number(this.solutions.solutions.get(this.topic).solution[index].trim());
         let correctSolution = this.thema.questions[index].answer;
         let tolerance = this.thema.questions[index].tolerance;
         if (userSolution >= correctSolution - correctSolution * tolerance && userSolution <= correctSolution + correctSolution * tolerance) {

@@ -686,9 +686,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           "possiblities": ["10 Ohm", "20 Ohm", "30 Ohm", "40 Ohm"],
           "answer": ["20 Ohm"]
         }, {
-          "type": "normal",
+          "type": "number",
           "question": "Der Gesamtstrom beträgt 5 A wie groß ist dann die Spannung (in Volt) an einem Widerstand mit 5 Ohm?",
-          "answer": ["25", "25 v", "25v"]
+          "answer": 25,
+          "tolerance": 0.05
         }]
       }]
     };
